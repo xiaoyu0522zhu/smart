@@ -1,0 +1,13 @@
+**/target/
+**/*.prefs
+**/*.component
+**/.copyarea.db
+**/*.classpath
+**/bin/
+**/*.settings/
+**/dependency-reduced-pomm.xml
+**/.idea/
+**/logs/
+**/.project
+**/*.iml
+**/*.log

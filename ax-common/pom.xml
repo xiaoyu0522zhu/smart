@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsl="http://www.w3.org/2001/XMLSchema-instance" xsl:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsl="http://www.w3.org/2001/XMLSchema-instance"
+         xsl:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.boc.esip</groupId>
@@ -19,14 +20,218 @@
         <spring.boot.version>2.0.7.RELEASE</spring.boot.version>
         <gson.version>2.8.0</gson.version>
         <druid.version>1.2.8</druid.version>
-<!--        1分布式服务基础工具组件-->
-        <dbsp.base>3.4.2-RELEASE</dbsp.base>
-<!--        2批量调度引擎-->
+        <!--1分布式服务基础工具组件-->
+        <dbsp-base>3.4.2-RELEASE</dbsp-base>
+        <!--2批量调度引擎-->
+        <dbsp_batch_schedule>3.4.4-RELEASE</dbsp_batch_schedule>
+        <!--3全局流水号-->
+        <!--4单元定位-->
+        <dbsp-unit-routing>3.4.4-RELEASE</dbsp-unit-routing>
+        <!--5交易路由-->
+        <dbsp-transaction-forward>3.4.4-RELEASE</dbsp-transaction-forward>
+        <!--6分库分表-->
+        <dbsp-unit-sharding>3.4.3-RELEASE</dbsp-unit-sharding>
+        <!--7加密机-->
+        <authencipher>3.4.2-RELEASE</authencipher>
+        <secret-decipher-sdk>1.0.3.0-pg</secret-decipher-sdk>
+        <!--8tsf独立版-->
+        <tencent.tsf>1.29.19-Finchley-RELEASE</tencent.tsf>
+        <!--9解密插件-->
+        <dbsp-dev-ext>3.4.1-RELEASE</dbsp-dev-ext>
+        <!--注册中心-->
+        <berc.registry.sofa.tsf.support.version>1.1.11-RELEASE</berc.registry.sofa.tsf.support.version>
     </properties>
     <dependencyManagement>
+        <dependencies>
+            <!--分布式服务基础工具-->
+            <dependency>
+                <groupId>com.boc.dbsp</groupId>
+                <artifactId>dpsp-base-starter</artifactId>
+                <version>${dbsp-base}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.boc.dbsp</groupId>
+                <artifactId>dpsp-base-msg-app</artifactId>
+                <version>${dbsp-base}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.boc.dbsp</groupId>
+                <artifactId>dbsp-base-msg-gateway</artifactId>
+                <version>${dbsp-base}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.boc.dbsp</groupId>
+                <artifactId>dbsp-base-log4j2</artifactId>
+                <version>${dbsp-base}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.boc.dbsp</groupId>
+                <artifactId>dbsp-base-common</artifactId>
+                <version>${dbsp-base}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.boc.dbsp</groupId>
+                <artifactId>dbsp-base-log-gateway</artifactId>
+                <version>${dbsp-base}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.boc.dbsp</groupId>
+                <artifactId>dbsp-base-log-common</artifactId>
+                <version>${dbsp-base}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.boc.dbsp</groupId>
+                <artifactId>dbsp-base-log-app</artifactId>
+                <version>${dbsp-base}</version>
+            </dependency>
+            <!--批量调度引擎-->
+            <dependency>
+                <groupId>com.boc.dbsp</groupId>
+                <artifactId>dbsp-btch-schedule-autoconfigure</artifactId>
+                <version>${dbsp-btch-schedule}</version>
+            </dependency>
+            <!--单元定位-->
+            <dependency>
+                <groupId>com.boc.dbsp</groupId>
+                <artifactId>dbsp-unit-routing-client</artifactId>
+                <version>${dbsp-unit-routing}</version>
+            </dependency>
+            <!--交易路由-->
+            <dependency>
+                <groupId>com.boc.dbsp</groupId>
+                <artifactId>dbsp-transaction-forward-core</artifactId>
+                <version>${dbsp-transaction-forward}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.boc.dbsp</groupId>
+                <artifactId>dbsp-transaction-forward-zuul</artifactId>
+                <version>${dbsp-transaction-forward}</version>
+            </dependency>
+            <!--分库分表-->
+            <dependency>
+                <groupId>com.boc.dbsp</groupId>
+                <artifactId>dbsp-unit-sharding-sdk</artifactId>
+                <version>${dbsp-btch-schedule}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.boc.dbsp</groupId>
+                <artifactId>dbsp-unit-sharding-api</artifactId>
+                <version>${dbsp-unit-sharding}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.boc.dbsp</groupId>
+                <artifactId>dbsp-unit-sharding-batch</artifactId>
+                <version>${dbsp-unit-sharding}</version>
+            </dependency>
+            <!--加密机-->
+            <dependency>
+                <groupId>com.boc.secgroup</groupId>
+                <artifactId>authencipher</artifactId>
+                <version>${authencipher}</version>
+            </dependency>
+            <!--tsf-->
+            <!--<dependency>
+                <groupId>com.tencent.tsf</groupId>
+                <artifactId>spring-cloud-tsf-dependencies</artifactId>
+                <version>${tencent.tsf}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>-->
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>2.10.2</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kjhxtc</groupId>
+                <artifactId>secret-decipher-sdk</artifactId>
+                <version>${secret-decipher-sdk}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.ulisesbocchio</groupId>
+                <artifactId>jasypt-spring-boot</artifactId>
+                <version>1.18</version>
+            </dependency>
 
+            <dependency>
+                <groupId>com.bocsoft.berc</groupId>
+                <artifactId>berc-registry-sofa-tsf-support</artifactId>
+                <version>${berc-registry-sofa-tsf-support}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.boc.dbsp</groupId>
+                <artifactId>dbsp-property-decipher-starter</artifactId>
+                <version>${dbsp-dev-ext}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.boc.dbsp</groupId>
+                <artifactId>dbsp-property-decipher-autoconfigure</artifactId>
+                <version>${dbsp-dev-ext}</version>
+            </dependency>
+        </dependencies>
     </dependencyManagement>
     <dependencies>
+        <!--tsf dependency-->
+       <!-- <dependency>
+            <groupId>com.tencent.tsf</groupId>
+            <artifactId>spring-cloud-tsf-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.book</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>-->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+       <!-- <dependency>
+            <groupId>com.boc.secgroup</groupId>
+            <artifactId>authencipher</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.kjhxtc</groupId>
+            <artifactId>secret-decipher-sdk</artifactId>
+        </dependency>-->
+        <dependency>
+            <groupId>com.github.ulisesbocchio</groupId>
+            <artifactId>jasypt-spring-boot</artifactId>
+        </dependency>
+       <!-- <dependency>
+            <groupId>com.boc.dbsp</groupId>
+            <artifactId>dbsp-base-starter</artifactId>
+        </dependency>
 
+        <dependency>
+            <groupId>com.boc.berc</groupId>
+            <artifactId>berc-registry-sofa-tsf-support</artifactId>
+        </dependency>-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+        </dependency>
+        <!--<dependency>
+            <groupId>com.boc.dbsp</groupId>
+            <artifactId>dbsp-property-decipher-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.boc.dbsp</groupId>
+            <artifactId>dbsp-property-decipher-autoconfigure</artifactId>
+        </dependency>-->
     </dependencies>
 </project>
