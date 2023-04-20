@@ -3,7 +3,7 @@
          xsl:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.boc.esip</groupId>
+    <groupId>com.qaz.esip</groupId>
     <artifactId>ax-common</artifactId>
     <version>1.0.0</version>
 
@@ -45,87 +45,87 @@
         <dependencies>
             <!--分布式服务基础工具-->
             <dependency>
-                <groupId>com.boc.dbsp</groupId>
+                <groupId>com.qaz.dbsp</groupId>
                 <artifactId>dpsp-base-starter</artifactId>
                 <version>${dbsp-base}</version>
             </dependency>
             <dependency>
-                <groupId>com.boc.dbsp</groupId>
+                <groupId>com.qaz.dbsp</groupId>
                 <artifactId>dpsp-base-msg-app</artifactId>
                 <version>${dbsp-base}</version>
             </dependency>
             <dependency>
-                <groupId>com.boc.dbsp</groupId>
+                <groupId>com.qaz.dbsp</groupId>
                 <artifactId>dbsp-base-msg-gateway</artifactId>
                 <version>${dbsp-base}</version>
             </dependency>
             <dependency>
-                <groupId>com.boc.dbsp</groupId>
+                <groupId>com.qaz.dbsp</groupId>
                 <artifactId>dbsp-base-log4j2</artifactId>
                 <version>${dbsp-base}</version>
             </dependency>
             <dependency>
-                <groupId>com.boc.dbsp</groupId>
+                <groupId>com.qaz.dbsp</groupId>
                 <artifactId>dbsp-base-common</artifactId>
                 <version>${dbsp-base}</version>
             </dependency>
             <dependency>
-                <groupId>com.boc.dbsp</groupId>
+                <groupId>com.qaz.dbsp</groupId>
                 <artifactId>dbsp-base-log-gateway</artifactId>
                 <version>${dbsp-base}</version>
             </dependency>
             <dependency>
-                <groupId>com.boc.dbsp</groupId>
+                <groupId>com.qaz.dbsp</groupId>
                 <artifactId>dbsp-base-log-common</artifactId>
                 <version>${dbsp-base}</version>
             </dependency>
             <dependency>
-                <groupId>com.boc.dbsp</groupId>
+                <groupId>com.qaz.dbsp</groupId>
                 <artifactId>dbsp-base-log-app</artifactId>
                 <version>${dbsp-base}</version>
             </dependency>
             <!--批量调度引擎-->
             <dependency>
-                <groupId>com.boc.dbsp</groupId>
+                <groupId>com.qaz.dbsp</groupId>
                 <artifactId>dbsp-btch-schedule-autoconfigure</artifactId>
                 <version>${dbsp-btch-schedule}</version>
             </dependency>
             <!--单元定位-->
             <dependency>
-                <groupId>com.boc.dbsp</groupId>
+                <groupId>com.qaz.dbsp</groupId>
                 <artifactId>dbsp-unit-routing-client</artifactId>
                 <version>${dbsp-unit-routing}</version>
             </dependency>
             <!--交易路由-->
             <dependency>
-                <groupId>com.boc.dbsp</groupId>
+                <groupId>com.qaz.dbsp</groupId>
                 <artifactId>dbsp-transaction-forward-core</artifactId>
                 <version>${dbsp-transaction-forward}</version>
             </dependency>
             <dependency>
-                <groupId>com.boc.dbsp</groupId>
+                <groupId>com.qaz.dbsp</groupId>
                 <artifactId>dbsp-transaction-forward-zuul</artifactId>
                 <version>${dbsp-transaction-forward}</version>
             </dependency>
             <!--分库分表-->
             <dependency>
-                <groupId>com.boc.dbsp</groupId>
+                <groupId>com.qaz.dbsp</groupId>
                 <artifactId>dbsp-unit-sharding-sdk</artifactId>
                 <version>${dbsp-btch-schedule}</version>
             </dependency>
             <dependency>
-                <groupId>com.boc.dbsp</groupId>
+                <groupId>com.qaz.dbsp</groupId>
                 <artifactId>dbsp-unit-sharding-api</artifactId>
                 <version>${dbsp-unit-sharding}</version>
             </dependency>
             <dependency>
-                <groupId>com.boc.dbsp</groupId>
+                <groupId>com.qaz.dbsp</groupId>
                 <artifactId>dbsp-unit-sharding-batch</artifactId>
                 <version>${dbsp-unit-sharding}</version>
             </dependency>
             <!--加密机-->
             <dependency>
-                <groupId>com.boc.secgroup</groupId>
+                <groupId>com.qaz.secgroup</groupId>
                 <artifactId>authencipher</artifactId>
                 <version>${authencipher}</version>
             </dependency>
@@ -154,7 +154,7 @@
             </dependency>
 
             <dependency>
-                <groupId>com.bocsoft.berc</groupId>
+                <groupId>com.qaz.berc</groupId>
                 <artifactId>berc-registry-sofa-tsf-support</artifactId>
                 <version>${berc-registry-sofa-tsf-support}</version>
             </dependency>
@@ -165,12 +165,12 @@
             </dependency>
 
             <dependency>
-                <groupId>com.boc.dbsp</groupId>
+                <groupId>com.qaz.dbsp</groupId>
                 <artifactId>dbsp-property-decipher-starter</artifactId>
                 <version>${dbsp-dev-ext}</version>
             </dependency>
             <dependency>
-                <groupId>com.boc.dbsp</groupId>
+                <groupId>com.qaz.dbsp</groupId>
                 <artifactId>dbsp-property-decipher-autoconfigure</artifactId>
                 <version>${dbsp-dev-ext}</version>
             </dependency>
@@ -201,7 +201,7 @@
             <artifactId>jedis</artifactId>
         </dependency>
        <!-- <dependency>
-            <groupId>com.boc.secgroup</groupId>
+            <groupId>com.qaz.secgroup</groupId>
             <artifactId>authencipher</artifactId>
         </dependency>
         <dependency>
@@ -213,12 +213,12 @@
             <artifactId>jasypt-spring-boot</artifactId>
         </dependency>
        <!-- <dependency>
-            <groupId>com.boc.dbsp</groupId>
+            <groupId>com.qaz.dbsp</groupId>
             <artifactId>dbsp-base-starter</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.boc.berc</groupId>
+            <groupId>com.qaz.berc</groupId>
             <artifactId>berc-registry-sofa-tsf-support</artifactId>
         </dependency>-->
         <dependency>
@@ -226,11 +226,11 @@
             <artifactId>druid</artifactId>
         </dependency>
         <!--<dependency>
-            <groupId>com.boc.dbsp</groupId>
+            <groupId>com.qaz.dbsp</groupId>
             <artifactId>dbsp-property-decipher-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.boc.dbsp</groupId>
+            <groupId>com.qaz.dbsp</groupId>
             <artifactId>dbsp-property-decipher-autoconfigure</artifactId>
         </dependency>-->
     </dependencies>
